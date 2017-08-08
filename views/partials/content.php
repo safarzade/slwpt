@@ -108,66 +108,91 @@
 				</div>
 
 				<div>
+                    <?php $new_products = new WP_Query(array(
+                            'post_type' => 'product',
+                            'order'     => 'ASC',
+                            'orderby'   => 'meta_value_num',
+                            'meta_key'  => Product::PRICE_META_KEY,
+                    )); ?>
+                    <?php if($new_products->have_posts()): ?>
+                        <?php while ($new_products->have_posts()): $new_products->the_post(); ?>
+                            <div class="spost clearfix">
+                                <div class="entry-image">
+                                    <a href="#"><img src="<?php echo Asset::image('shop/small/1.jpg'); ?>" alt="Image"></a>
+                                </div>
+                                <div class="entry-c">
+                                    <div class="entry-title">
+                                        <h4><a href="#"><?php echo get_the_title(); ?></a></h4>
+                                    </div>
+                                    <ul class="entry-meta">
+                                        <li class="color"><?php echo Product::price(get_the_ID()); ?></li>
+                                        <li><i class="icon-star3"></i> <i class="icon-star3"></i> <i class="icon-star3"></i> <i class="icon-star3"></i> <i class="icon-star-half-full"></i></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        <?php endwhile; ?>
+                    <?php else: ?>
 
-					<div class="spost clearfix">
-						<div class="entry-image">
-							<a href="#"><img src="<?php echo Asset::image('shop/small/1.jpg'); ?>" alt="Image"></a>
-						</div>
-						<div class="entry-c">
-							<div class="entry-title">
-								<h4><a href="#">Blue Round-Neck Tshirt</a></h4>
-							</div>
-							<ul class="entry-meta">
-								<li class="color">$29.99</li>
-								<li><i class="icon-star3"></i> <i class="icon-star3"></i> <i class="icon-star3"></i> <i class="icon-star3"></i> <i class="icon-star-half-full"></i></li>
-							</ul>
-						</div>
-					</div>
-
-					<div class="spost clearfix">
-						<div class="entry-image">
-							<a href="#"><img src="images/shop/small/6.jpg" alt="Image"></a>
-						</div>
-						<div class="entry-c">
-							<div class="entry-title">
-								<h4><a href="#">Checked Short Dress</a></h4>
-							</div>
-							<ul class="entry-meta">
-								<li class="color">$23.99</li>
-								<li><i class="icon-star3"></i> <i class="icon-star3"></i> <i class="icon-star3"></i> <i class="icon-star-half-full"></i> <i class="icon-star-empty"></i></li>
-							</ul>
-						</div>
-					</div>
-
-					<div class="spost clearfix">
-						<div class="entry-image">
-							<a href="#"><img src="images/shop/small/7.jpg" alt="Image"></a>
-						</div>
-						<div class="entry-c">
-							<div class="entry-title">
-								<h4><a href="#">Light Blue Denim Dress</a></h4>
-							</div>
-							<ul class="entry-meta">
-								<li class="color">$19.99</li>
-								<li><i class="icon-star3"></i> <i class="icon-star3"></i> <i class="icon-star3"></i> <i class="icon-star-empty"></i> <i class="icon-star-empty"></i></li>
-							</ul>
-						</div>
-					</div>
-
-					<div class="spost clearfix">
-						<div class="entry-image">
-							<a href="#"><img src="images/shop/small/9.jpg" alt="Image"></a>
-						</div>
-						<div class="entry-c">
-							<div class="entry-title">
-								<h4><a href="#">Slim Fit Chinos</a></h4>
-							</div>
-							<ul class="entry-meta">
-								<li class="color">$24.99</li>
-								<li><i class="icon-star3"></i> <i class="icon-star3"></i> <i class="icon-star3"></i> <i class="icon-star3"></i> <i class="icon-star-empty"></i></li>
-							</ul>
-						</div>
-					</div>
+                    <?php endif; ?>
+<!--					<div class="spost clearfix">-->
+<!--						<div class="entry-image">-->
+<!--							<a href="#"><img src="--><?php //echo Asset::image('shop/small/1.jpg'); ?><!--" alt="Image"></a>-->
+<!--						</div>-->
+<!--						<div class="entry-c">-->
+<!--							<div class="entry-title">-->
+<!--								<h4><a href="#">Blue Round-Neck Tshirt</a></h4>-->
+<!--							</div>-->
+<!--							<ul class="entry-meta">-->
+<!--								<li class="color">$29.99</li>-->
+<!--								<li><i class="icon-star3"></i> <i class="icon-star3"></i> <i class="icon-star3"></i> <i class="icon-star3"></i> <i class="icon-star-half-full"></i></li>-->
+<!--							</ul>-->
+<!--						</div>-->
+<!--					</div>-->
+<!---->
+<!--					<div class="spost clearfix">-->
+<!--						<div class="entry-image">-->
+<!--							<a href="#"><img src="images/shop/small/6.jpg" alt="Image"></a>-->
+<!--						</div>-->
+<!--						<div class="entry-c">-->
+<!--							<div class="entry-title">-->
+<!--								<h4><a href="#">Checked Short Dress</a></h4>-->
+<!--							</div>-->
+<!--							<ul class="entry-meta">-->
+<!--								<li class="color">$23.99</li>-->
+<!--								<li><i class="icon-star3"></i> <i class="icon-star3"></i> <i class="icon-star3"></i> <i class="icon-star-half-full"></i> <i class="icon-star-empty"></i></li>-->
+<!--							</ul>-->
+<!--						</div>-->
+<!--					</div>-->
+<!---->
+<!--					<div class="spost clearfix">-->
+<!--						<div class="entry-image">-->
+<!--							<a href="#"><img src="images/shop/small/7.jpg" alt="Image"></a>-->
+<!--						</div>-->
+<!--						<div class="entry-c">-->
+<!--							<div class="entry-title">-->
+<!--								<h4><a href="#">Light Blue Denim Dress</a></h4>-->
+<!--							</div>-->
+<!--							<ul class="entry-meta">-->
+<!--								<li class="color">$19.99</li>-->
+<!--								<li><i class="icon-star3"></i> <i class="icon-star3"></i> <i class="icon-star3"></i> <i class="icon-star-empty"></i> <i class="icon-star-empty"></i></li>-->
+<!--							</ul>-->
+<!--						</div>-->
+<!--					</div>-->
+<!---->
+<!--					<div class="spost clearfix">-->
+<!--						<div class="entry-image">-->
+<!--							<a href="#"><img src="images/shop/small/9.jpg" alt="Image"></a>-->
+<!--						</div>-->
+<!--						<div class="entry-c">-->
+<!--							<div class="entry-title">-->
+<!--								<h4><a href="#">Slim Fit Chinos</a></h4>-->
+<!--							</div>-->
+<!--							<ul class="entry-meta">-->
+<!--								<li class="color">$24.99</li>-->
+<!--								<li><i class="icon-star3"></i> <i class="icon-star3"></i> <i class="icon-star3"></i> <i class="icon-star3"></i> <i class="icon-star-empty"></i></li>-->
+<!--							</ul>-->
+<!--						</div>-->
+<!--					</div>-->
 
 				</div>
 
