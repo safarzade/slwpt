@@ -118,11 +118,11 @@
                         <?php while ($new_products->have_posts()): $new_products->the_post(); ?>
                             <div class="spost clearfix">
                                 <div class="entry-image">
-                                    <a href="#"><img src="<?php echo Asset::image('shop/small/1.jpg'); ?>" alt="Image"></a>
+                                    <a href="<?php echo get_the_permalink(); ?>"><img src="<?php echo Asset::image('shop/small/1.jpg'); ?>" alt="Image"></a>
                                 </div>
                                 <div class="entry-c">
                                     <div class="entry-title">
-                                        <h4><a href="#"><?php echo get_the_title(); ?></a></h4>
+                                        <h4><a href="<?php echo get_the_permalink(); ?>"><?php echo get_the_title(); ?></a></h4>
                                     </div>
                                     <ul class="entry-meta">
                                         <li class="color"><?php echo Product::price(get_the_ID()); ?></li>

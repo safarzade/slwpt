@@ -1,7 +1,5 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: user
- * Date: 7/31/2017
- * Time: 4:31 PM
- */
+<?php get_header(); ?>
+<?php View::render('partials/top-bar'); ?>
+<?php View::render('partials/header'); ?>
+<?php View::render('partials/single-content'); ?>
+<?php get_footer(); ?>
