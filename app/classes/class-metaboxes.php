@@ -23,18 +23,6 @@ class MetaBoxes {
 			'product_price'         => $post_price,
 			'product_price_sale' => $post_price_sale
 		) );
-
-		$_SESSION['basket'] =[
-				'items'  => [
-					1 => [ 'title' => '','price' => 2000,],
-					1 => [ 'title' => '','price' => 2000,],
-					1 => [ 'title' => '','price' => 2000,],
-					1 => [ 'title' => '','price' => 2000,],
-					1 => [ 'title' => '','price' => 2000,],
-				],
-			'total_price' => 100000
-
-		];
 	}
 
 	public static function save_product_price( $post_id ) {

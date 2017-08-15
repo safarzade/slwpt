@@ -259,6 +259,6 @@
 <!-- Footer Scripts
 ============================================= -->
 <script type="text/javascript" src="<?php echo Asset::js( 'functions.js' ); ?>"></script>
-
+<?php echo base64_encode("aosgfutfg9aws89g7e9+S+Vs4S9AFA+EWG7S+XZCZV"); ?>
 </body>
 </html>

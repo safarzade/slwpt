@@ -28,4 +28,4 @@
 	============================================= -->
 </head>
 
-<body class="stretched rtl">
+<body <?php body_class() ?> >

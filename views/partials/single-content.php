@@ -1,3 +1,10 @@
+<?php if(isset($_POST['add_to_cart'])){
+	$product_id = intval($_POST['product_id']);
+	$quantity = intval($_POST['quantity']);
+	if($product_id > 0 && $quantity > 0){
+		do_action('add_to_cart',$product_id,$quantity);
+	}
+} ?>
 <?php if(have_posts()): ?>
 	<?php while(have_posts()): the_post(); ?>
 <section id="page-title">
@@ -87,8 +94,9 @@
 								<input type="button" value="-" class="minus">
 								<input type="text" step="1" min="1"  name="quantity" value="1" title="Qty" class="qty" size="4" />
 								<input type="button" value="+" class="plus">
+                                <input type="hidden" name="product_id" value="<?php echo get_the_ID(); ?>">
 							</div>
-							<button type="submit" class="add-to-cart button nomargin">Add to cart</button>
+							<button type="submit" name="add_to_cart" class="add-to-cart button nomargin">Add to cart</button>
 						</form><!-- Product Single - Quantity & Cart Button End -->
 
 						<div class="clear"></div>
