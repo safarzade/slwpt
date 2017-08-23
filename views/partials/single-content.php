@@ -104,13 +104,8 @@
 
 						<!-- Product Single - Short Description
 						============================================= -->
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero velit id eaque ex quae laboriosam nulla optio doloribus! Perspiciatis, libero, neque, perferendis at nisi optio dolor!</p>
-						<p>Perspiciatis ad eveniet ea quasi debitis quos laborum eum reprehenderit eaque explicabo assumenda rem modi.</p>
-						<ul class="iconlist">
-							<li><i class="icon-caret-right"></i> Dynamic Color Options</li>
-							<li><i class="icon-caret-right"></i> Lots of Size Options</li>
-							<li><i class="icon-caret-right"></i> 30-Day Return Policy</li>
-						</ul><!-- Product Single - Short Description End -->
+                        <?php the_content(); ?>
+                        <!-- Product Single - Short Description End -->
 
 						<!-- Product Single - Meta
 						============================================= -->

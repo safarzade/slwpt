@@ -108,12 +108,22 @@
 				</div>
 
 				<div>
-                    <?php $new_products = new WP_Query(array(
-                            'post_type' => 'product',
-                            'order'     => 'ASC',
-                            'orderby'   => 'meta_value_num',
-                            'meta_key'  => Product::PRICE_META_KEY,
-                    )); ?>
+                    <?php
+//                    $products_repository = new Product_Repository();
+//
+//                    $new_products =  $products_repository->latest();
+
+                    Cache::get('home_page_products');
+                    if($new_products === false){
+	                    $new_products = new WP_Query(array(
+		                    'post_type' => 'product',
+		                    'order'     => 'ASC',
+		                    'orderby'   => 'meta_value_num',
+		                    'meta_key'  => Product::PRICE_META_KEY,
+	                    ));
+	                    Cache::set('home_page_products',$new_products);
+                    }
+                    ?>
                     <?php if($new_products->have_posts()): ?>
                         <?php while ($new_products->have_posts()): $new_products->the_post(); ?>
                             <div class="spost clearfix">

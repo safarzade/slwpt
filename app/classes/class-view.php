@@ -22,7 +22,6 @@ class View {
 
 	private static function render_view( $view_name, $data = null ) {
 
-
 		get_template_part( 'views/' . $view_name );
 	}
 
