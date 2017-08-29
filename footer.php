@@ -1,5 +1,6 @@
 <!-- Footer
 	============================================= -->
+<?php //get_sidebar(); ?>
 <footer id="footer" class="dark">
 
     <div class="container">
@@ -11,26 +12,28 @@
             <div class="col_two_third">
 
                 <div class="col_one_third">
-
-                    <div class="widget clearfix">
-
-                        <img src="images/footer-widget-logo.png" alt="" class="footer-logo">
-
-                        <p>We believe in <strong>Simple</strong>, <strong>Creative</strong> &amp;
-                            <strong>Flexible</strong> Design Standards.</p>
-
-                        <div style="background: url('images/world-map.png') no-repeat center center; background-size: 100%;">
-                            <address>
-                                <strong>Headquarters:</strong><br>
-                                795 Folsom Ave, Suite 600<br>
-                                San Francisco, CA 94107<br>
-                            </address>
-                            <abbr title="Phone Number"><strong>Phone:</strong></abbr> (91) 8547 632521<br>
-                            <abbr title="Fax"><strong>Fax:</strong></abbr> (91) 11 4752 1433<br>
-                            <abbr title="Email Address"><strong>Email:</strong></abbr> info@canvas.com
-                        </div>
-
-                    </div>
+                    <?php if(is_active_sidebar('slwpt-main-sidebar')): ?>
+                        <?php dynamic_sidebar('slwpt-main-sidebar'); ?>
+                    <?php endif; ?>
+<!--                    <div class="widget clearfix">-->
+<!---->
+<!--                        <img src="images/footer-widget-logo.png" alt="" class="footer-logo">-->
+<!---->
+<!--                        <p>We believe in <strong>Simple</strong>, <strong>Creative</strong> &amp;-->
+<!--                            <strong>Flexible</strong> Design Standards.</p>-->
+<!---->
+<!--                        <div style="background: url('images/world-map.png') no-repeat center center; background-size: 100%;">-->
+<!--                            <address>-->
+<!--                                <strong>Headquarters:</strong><br>-->
+<!--                                795 Folsom Ave, Suite 600<br>-->
+<!--                                San Francisco, CA 94107<br>-->
+<!--                            </address>-->
+<!--                            <abbr title="Phone Number"><strong>Phone:</strong></abbr> (91) 8547 632521<br>-->
+<!--                            <abbr title="Fax"><strong>Fax:</strong></abbr> (91) 11 4752 1433<br>-->
+<!--                            <abbr title="Email Address"><strong>Email:</strong></abbr> info@canvas.com-->
+<!--                        </div>-->
+<!---->
+<!--                    </div>-->
 
                 </div>
 

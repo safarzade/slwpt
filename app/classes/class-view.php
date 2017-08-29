@@ -12,10 +12,10 @@ class View {
 
 		switch ( $name ) {
 			case 'render':
-				self::render_view( $arguments[0], $arguments[1] );
+				isset($arguments[1]) ? self::render_view( $arguments[0], $arguments[1] ) : self::render_view( $arguments[0] );
 				break;
 			case 'renderFile':
-				self::render_view_by_include( $arguments[0], $arguments[1] );
+				isset($arguments[1]) ? self::render_view_by_include( $arguments[0], $arguments[1] ): self::render_view_by_include( $arguments[0]) ;
 				break;
 		}
 	}
