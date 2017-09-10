@@ -1,5 +1,9 @@
 <div class="wrap">
 	<h1>تنظیمات قالب</h1>
+    <a href="<?php echo wp_nonce_url(add_query_arg([
+	    'action' => 'view_general_settings',
+//            '_wpnonce' => wp_create_nonce()
+    ])); ?>">تنظیمات عمومی</a>
 	<style>
 		.form-row{
 			margin: 20px 0;
@@ -30,6 +34,7 @@
 		<div class="form-row">
 			<?php wp_editor('','email_format'); ?>
 		</div>
+        <?php wp_nonce_field('save_theme_settings','save_theme_settings_nonce'); ?>
 		<div class="form-row">
 			<button type="submit" name="save_options" class="button button-primary">ذخیره اطلاعات</button>
 		</div>

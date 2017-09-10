@@ -30,6 +30,10 @@ class Options_Panel {
 	}
 
 	public function save_options_handler() {
+//		check_admin_referer('save_theme_settings','save_theme_settings_nonce');
+		if(!isset($_POST['save_theme_settings_nonce']) || !wp_verify_nonce($_REQUEST['save_theme_settings_nonce'],'save_theme_settings')){
+			wp_die('no access');
+		}
 		$options                          = self::load();
 		$options['member_content_active'] = isset( $_POST['member_content_active'] ) ? 1 : 0;
 		self::update( $options );
