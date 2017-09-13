@@ -5,6 +5,7 @@ add_action( 'after_setup_theme', 'Initializer::setup' );
 add_filter( 'show_admin_bar', '__return_false' );
 add_action( 'init', 'PostTypes::make_product_post_type' );
 add_action( 'init', 'Initializer::start_session' );
+add_action('init','Taxonomy::register_product_taxonomy');
 add_action( 'init', function () {
 	if ( ! is_admin() ) {
 		if ( isset( $_GET['remove_cart_item'] ) && intval( $_GET['remove_cart_item'] ) > 0 ) {
