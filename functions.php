@@ -1,5 +1,7 @@
 <?php
+include_once "vendor/autoload.php";
 include "constants.php";
+include_once "bootstrap/bootstrap.php";
 include "app/autoloader.php";
 add_action( 'after_setup_theme', 'Initializer::setup' );
 add_filter( 'show_admin_bar', '__return_false' );
@@ -32,3 +34,7 @@ add_action('widgets_init',function (){
 });
 
 //Cache::set('home_page_slider_query',array(1,2,3,4,5,6));
+
+$user_repository= new \Application\Repositories\UsersRepository();
+$user = $user_repository->find(1);
+var_dump($user->fullname);
