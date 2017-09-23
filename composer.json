@@ -1,0 +1,15 @@
+{
+    "name": "user/slwpt",
+    "authors": [
+        {
+            "name": "keivan alimohammadi",
+            "email": "keivan.amohamadi@gmail.com"
+        }
+    ],
+    "autoload":{
+        "psr-4":{
+            "Application\\":"Application/"
+        }
+    },
+    "require": {}
+}
